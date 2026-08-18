@@ -32,21 +32,22 @@ h1, h2, h3 {
 
 /* ---------- CRONÔMETRO FIXO ---------- */
 .floating-timer {
+  .timer-fixed {
   position: fixed;
-  top: 18px;
-  right: 18px;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 9999;
+
+  background: #6b0f1a;
+  color: white;
+
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
-  background: rgba(89, 14, 34, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #fff;
+
+  padding: 12px 20px;
+  box-sizing: border-box;
 }
 
 .timer-label {
