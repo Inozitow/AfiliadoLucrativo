@@ -57,7 +57,12 @@ h1, h2, h3 {
 }
 
 .timer-label {
-  font-size: 26px;
+  font-size: 22px;
+}
+
+.timer-value {
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .floating-timer.timer-ended {
