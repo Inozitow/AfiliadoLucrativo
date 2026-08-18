@@ -32,23 +32,28 @@ h1, h2, h3 {
 
 
 /* ---------- CRONÔMETRO FIXO ---------- */
-.floating-timer {
-  .timer-fixed {
+.timer-fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 58px;
   z-index: 9999;
 
   background: #6b0f1a;
-  color: white;
+  color: #ffffff;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 
-  padding: 12px 20px;
+  padding: 0 20px;
   box-sizing: border-box;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 .timer-label {
