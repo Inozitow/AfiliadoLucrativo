@@ -11,7 +11,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  padding-top: 60px;
+  padding-top: 58px;
   background: var(--preto);
   color: var(--texto);
   font-family: 'Poppins', sans-serif;
@@ -32,7 +32,7 @@ h1, h2, h3 {
 
 
 /* ---------- CRONÔMETRO FIXO ---------- */
-.timer-fixed {
+.floating-timer {
   position: fixed;
   top: 0;
   left: 0;
@@ -53,25 +53,6 @@ h1, h2, h3 {
 
   font-family: "Manrope", sans-serif;
   font-weight: 700;
-  text-align: center;
-}
-
-.timer-label {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  opacity: 0.88;
-}
-
-.timer-value {
-  font-family: 'Manrope', sans-serif;
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.5px;
-  min-width: 62px;
   text-align: center;
 }
 
