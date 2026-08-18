@@ -18,7 +18,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -28,6 +28,49 @@ h1, h2, h3 {
 }
 
 .gold { color: var(--dourado); }
+
+
+/* ---------- CRONÔMETRO FIXO ---------- */
+.floating-timer {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(89, 14, 34, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.timer-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.timer-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  min-width: 62px;
+  text-align: center;
+}
+
+.floating-timer.timer-ended {
+  background: rgba(55, 10, 22, 0.96);
+}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -68,12 +111,15 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: 44px;
-  font-weight: 700;
-  max-width: 780px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  max-width: 840px;
   margin: 0 auto 24px;
-  line-height: 1.25;
+  line-height: 1.14;
+  letter-spacing: -1.6px;
 }
+
 
 .subtitle {
   font-size: 18px;
@@ -342,4 +388,24 @@ details p {
   .grid-3, .bonus-grid, .planos-grid { grid-template-columns: 1fr; }
   .conteudo-grid { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
+}
+
+@media (max-width: 600px) {
+  .floating-timer {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    justify-content: center;
+    padding: 10px 14px;
+  }
+
+  .timer-label { font-size: 10px; }
+  .timer-value { font-size: 19px; }
+
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.12;
+    letter-spacing: -1.2px;
+  }
 }

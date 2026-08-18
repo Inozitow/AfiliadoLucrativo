@@ -5,10 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Método Afiliado Lucrativo — Renda Extra com Shopee & TikTok</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
+<!-- CRONÔMETRO FIXO -->
+<div class="floating-timer" id="floatingTimer" role="status" aria-live="polite">
+  <span class="timer-label">Condição especial termina em</span>
+  <span class="timer-value" id="timerValue">15:00</span>
+</div>
 
 <!-- 01. VENDA IMEDIATA -->
 <header class="hero" id="topo">
@@ -218,5 +224,38 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  const DURATION = 15 * 60 * 1000;
+  const STORAGE_KEY = 'mal_timer_end';
+  const timerValue = document.getElementById('timerValue');
+  const timerBox = document.getElementById('floatingTimer');
+
+  let endTime = Number(sessionStorage.getItem(STORAGE_KEY));
+  if (!endTime || endTime <= Date.now()) {
+    endTime = Date.now() + DURATION;
+    sessionStorage.setItem(STORAGE_KEY, String(endTime));
+  }
+
+  function updateTimer() {
+    const remaining = Math.max(0, endTime - Date.now());
+    const totalSeconds = Math.ceil(remaining / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
+    timerValue.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    if (remaining <= 0) {
+      timerBox.classList.add('timer-ended');
+      timerBox.querySelector('.timer-label').textContent = 'Tempo encerrado';
+      sessionStorage.removeItem(STORAGE_KEY);
+      clearInterval(interval);
+    }
+  }
+
+  updateTimer();
+  const interval = setInterval(updateTimer, 1000);
+})();
+</script>
 </body>
 </html>
