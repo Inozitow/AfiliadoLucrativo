@@ -46,14 +46,18 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 
   padding: 0 20px;
   box-sizing: border-box;
 
   font-family: "Manrope", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
+}
+
+.timer-label {
+  font-size: 18px;
 }
 
 .floating-timer.timer-ended {
