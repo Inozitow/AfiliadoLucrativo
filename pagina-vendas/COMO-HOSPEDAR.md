@@ -52,3 +52,4 @@ Se tiver alguma dúvida, o suporte do Vercel é excelente e responde rápido:
 
 **Tempo total:** 2-5 minutos
 **Custo:** R$ 0,00 (plano gratuito é mais que suficiente)
+
