@@ -30,6 +30,9 @@ h1, h2, h3 {
 
 .gold { color: var(--dourado); }
 
+.gold-text {
+  color: #d4af37;
+}
 
 /* ---------- CRONÔMETRO FIXO ---------- */
 .floating-timer {
@@ -93,7 +96,9 @@ h1, h2, h3 {
   z-index: 0;
 }
 
-.hero-inner { position: relative; z-index: 1; }
+.hero-inner { position: relative;
+             z-index: 2; 
+            }
 
 .tag {
   display: inline-block;
@@ -129,6 +134,33 @@ h1, h2, h3 {
   margin-top: 18px;
   font-size: 13px;
   color: var(--texto-suave);
+}
+
+/* ---------- DINHEIRO CAINDO NAS LATERAIS ---------- */
+
+.money-rain {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 260px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.30;
+}
+
+.money-rain img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.money-rain-left {
+  left: 0;
+}
+
+.money-rain-right {
+  right: 0;
+  transform: scaleX(-1);
 }
 
 /* ---------- BUTTONS ---------- */
