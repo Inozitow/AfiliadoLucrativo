@@ -445,3 +445,44 @@ document.addEventListener("DOMContentLoaded", function () {
   
 </body>
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const closeButton = document.getElementById("lightboxClose");
+
+  const carouselImages = document.querySelectorAll(".carousel-slide img");
+
+  carouselImages.forEach(function (image) {
+
+    image.addEventListener("click", function () {
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+    });
+
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (event) {
+
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+
+  });
+
+});
+</script>
