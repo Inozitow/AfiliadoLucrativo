@@ -651,9 +651,16 @@ details p {
 .image-lightbox img {
   max-width: 100%;
   max-height: 90vh;
-
   object-fit: contain;
-  border-radius: 10px;
+
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  touch-action: pinch-zoom;
 }
 
 .lightbox-close {
@@ -681,7 +688,7 @@ details p {
 /* ---------- SWIPE NO LIGHTBOX ---------- */
 
 .image-lightbox {
-  touch-action: pan-y;
+  touch-action: manipulation;
   overflow: hidden;
 }
 
