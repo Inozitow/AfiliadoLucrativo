@@ -260,8 +260,8 @@ h1, h2, h3 {
   top: 50%;
   transform: translateY(-50%);
 
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
 
   padding: 0;
   border: 0;
@@ -281,11 +281,11 @@ h1, h2, h3 {
 }
 
 .carousel-prev {
-  left: -80px;
+  left: -60px;
 }
 
 .carousel-next {
-  right: -80px;
+  right: -60px;
 }
 
 .carousel-arrow:hover {
