@@ -509,3 +509,119 @@ details p {
     letter-spacing: -1.2px;
   }
 }
+
+/* ---------- AJUSTES MOBILE ---------- */
+@media (max-width: 768px) {
+
+  /* CRONÔMETRO NO TOPO */
+  .floating-timer {
+    top: 0;
+    bottom: auto;
+
+    height: 64px;
+    width: 100%;
+
+    padding: 0 12px;
+
+    justify-content: center;
+    gap: 8px;
+
+    z-index: 9999;
+  }
+
+  .timer-label {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .timer-value {
+    font-size: 24px;
+  }
+
+  body {
+    padding-top: 64px;
+    overflow-x: hidden;
+  }
+
+
+  /* BLOCO 2 OCUPANDO A LARGURA TODA */
+  .demo {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    padding-left: 0;
+    padding-right: 0;
+
+    overflow: hidden;
+  }
+
+  .demo .container {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .demo .section-title,
+  .demo .section-subtitle {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+
+  /* CARROSSEL MAIOR NO CELULAR */
+  .product-carousel {
+    width: 100%;
+    max-width: none;
+    margin-top: 32px;
+  }
+
+  .carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    gap: 14px;
+    touch-action: pan-y;
+  }
+
+  .carousel-slide {
+    flex: 0 0 84%;
+  }
+
+  .carousel-slide.active {
+    transform: scale(1);
+  }
+
+  .carousel-slide:not(.active) {
+    opacity: 0.22;
+    filter: blur(3px);
+    transform: scale(0.92);
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+
+  /* SETAS VISÍVEIS NO CELULAR */
+  .carousel-arrow {
+    width: 48px;
+    height: 48px;
+
+    top: 50%;
+    z-index: 30;
+  }
+
+  .carousel-prev {
+    left: 8px;
+  }
+
+  .carousel-next {
+    right: 8px;
+  }
+}
