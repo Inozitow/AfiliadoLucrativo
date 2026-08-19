@@ -193,6 +193,105 @@ h1, h2, h3 {
 }
 .demo-image img { width: 100%; display: block; }
 
+/* ---------- CARROSSEL DO PRODUTO ---------- */
+
+.product-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 35px auto 0;
+  overflow: visible;
+}
+
+/* Área onde ficam as imagens */
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  padding: 10px 11% 25px;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cada imagem do carrossel */
+.carousel-slide {
+  flex: 0 0 78%;
+  scroll-snap-align: center;
+
+  opacity: 0.30;
+  filter: blur(4px);
+  transform: scale(0.94);
+
+  transition:
+    opacity 0.35s ease,
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* Imagem que está selecionada */
+.carousel-slide.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+
+/* ---------- SETAS DO CARROSSEL ---------- */
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 64px;
+  height: 64px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+  z-index: 20;
+
+  transition: transform 0.2s ease;
+}
+
+.carousel-arrow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-prev {
+  left: -80px;
+}
+
+.carousel-next {
+  right: -80px;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
 /* ---------- BENEFICIOS ---------- */
 .grid-3 {
   display: grid;
