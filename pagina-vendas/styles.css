@@ -249,7 +249,8 @@ h1, h2, h3 {
   height: auto;
   border-radius: 12px;
 
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 
