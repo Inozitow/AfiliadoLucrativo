@@ -677,3 +677,28 @@ details p {
   border-radius: 50%;
   z-index: 100000;
 }
+
+/* ---------- SWIPE NO LIGHTBOX ---------- */
+
+.image-lightbox {
+  touch-action: pan-y;
+  overflow: hidden;
+}
+
+.image-lightbox img {
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.image-lightbox img.swipe-left {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+.image-lightbox img.swipe-right {
+  transform: translateX(40px);
+  opacity: 0;
+}
