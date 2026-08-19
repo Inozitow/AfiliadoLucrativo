@@ -538,9 +538,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let startX = 0;
   let startY = 0;
 
-  lightbox.addEventListener("touchstart", function (event) {
+lightbox.addEventListener("touchstart", function (event) {
 
-    const touch = event.touches[0];
+  if (event.touches.length > 1) return;
+
+  const touch = event.touches[0];
 
     startX = touch.clientX;
     startY = touch.clientY;
@@ -549,6 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   lightbox.addEventListener("touchend", function (event) {
+    if (event.changedTouches.length !== 1) return;
 
     const touch = event.changedTouches[0];
 
