@@ -625,3 +625,54 @@ details p {
     right: 8px;
   }
 }
+
+/* ---------- LIGHTBOX MOBILE ---------- */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.96);
+  z-index: 99999;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-lightbox.active {
+  display: flex;
+}
+
+.image-lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 18px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #d4af37;
+  font-size: 38px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+  z-index: 100000;
+}
