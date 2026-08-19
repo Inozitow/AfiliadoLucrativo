@@ -308,5 +308,131 @@
   const interval = setInterval(updateTimer, 1000);
 })();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const track = document.querySelector(".carousel-track");
+  const viewport = document.querySelector(".carousel-viewport");
+  const prevButton = document.querySelector(".carousel-prev");
+  const nextButton = document.querySelector(".carousel-next");
+
+  const originalSlides = Array.from(track.children);
+
+  /* Cria cópias para deixar o carrossel infinito */
+  const firstClone = originalSlides[0].cloneNode(true);
+  const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+  firstClone.classList.remove("active");
+  lastClone.classList.remove("active");
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, track.firstChild);
+
+  let slides = Array.from(track.children);
+
+  /* Começamos na primeira imagem REAL */
+  let currentIndex = 1;
+
+  function updateCarousel(animate = true) {
+
+    track.style.transition = animate
+      ? "transform 0.45s ease"
+      : "none";
+
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    slides[currentIndex].classList.add("active");
+
+    const activeSlide = slides[currentIndex];
+
+    const viewportCenter = viewport.clientWidth / 2;
+    const slideCenter =
+      activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
+
+    const offset = viewportCenter - slideCenter;
+
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    updateCarousel(true);
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    updateCarousel(true);
+  }
+
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
+
+
+  /* Corrige quando chega nas imagens clonadas */
+  track.addEventListener("transitionend", function () {
+
+    if (currentIndex === slides.length - 1) {
+      currentIndex = 1;
+      updateCarousel(false);
+    }
+
+    if (currentIndex === 0) {
+      currentIndex = slides.length - 2;
+      updateCarousel(false);
+    }
+  });
+
+
+  /* ---------- ARRASTAR COM MOUSE OU DEDO ---------- */
+
+  let startX = 0;
+  let dragging = false;
+
+  track.addEventListener("pointerdown", function (event) {
+    dragging = true;
+    startX = event.clientX;
+
+    track.setPointerCapture(event.pointerId);
+  });
+
+  track.addEventListener("pointerup", function (event) {
+
+    if (!dragging) return;
+
+    dragging = false;
+
+    const distance = event.clientX - startX;
+
+    if (distance < -50) {
+      nextSlide();
+    }
+
+    else if (distance > 50) {
+      prevSlide();
+    }
+
+    else {
+      updateCarousel(true);
+    }
+  });
+
+  track.addEventListener("pointercancel", function () {
+    dragging = false;
+    updateCarousel(true);
+  });
+
+
+  /* Recalcula caso o tamanho da tela mude */
+  window.addEventListener("resize", function () {
+    updateCarousel(false);
+  });
+
+
+  updateCarousel(false);
+
+});
+</script>
+  
 </body>
 </html>
