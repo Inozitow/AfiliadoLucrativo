@@ -200,45 +200,43 @@ h1, h2, h3 {
   width: 100%;
   max-width: 1200px;
   margin: 35px auto 0;
-  overflow: visible;
 }
 
-/* Área onde ficam as imagens */
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
 .carousel-track {
   display: flex;
   align-items: center;
   gap: 24px;
 
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  transition: transform 0.45s ease;
+  will-change: transform;
 
-  padding: 10px 11% 25px;
-
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.carousel-track:active {
+  cursor: grabbing;
 }
 
-/* Cada imagem do carrossel */
 .carousel-slide {
-  flex: 0 0 78%;
-  scroll-snap-align: center;
+  flex: 0 0 64%;
 
-  opacity: 0.30;
+  opacity: 0.25;
   filter: blur(4px);
   transform: scale(0.94);
 
   transition:
-    opacity 0.35s ease,
-    filter 0.35s ease,
-    transform 0.35s ease;
+    opacity 0.4s ease,
+    filter 0.4s ease,
+    transform 0.4s ease;
 }
 
-/* Imagem que está selecionada */
 .carousel-slide.active {
   opacity: 1;
   filter: blur(0);
@@ -250,6 +248,8 @@ h1, h2, h3 {
   width: 100%;
   height: auto;
   border-radius: 12px;
+
+  pointer-events: none;
 }
 
 
@@ -260,8 +260,8 @@ h1, h2, h3 {
   top: 50%;
   transform: translateY(-50%);
 
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
 
   padding: 0;
   border: 0;
@@ -274,18 +274,17 @@ h1, h2, h3 {
 }
 
 .carousel-arrow img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
 .carousel-prev {
-  left: -60px;
+  left: -90px;
 }
 
 .carousel-next {
-  right: -60px;
+  right: -90px;
 }
 
 .carousel-arrow:hover {
