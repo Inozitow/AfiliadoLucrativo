@@ -443,7 +443,7 @@ h1, h2, h3 {
   );
 
   transform: rotate(20deg);
-  animation: brilhoSelo 3s infinite;
+  animation: brilhoSelo 1s infinite;
 }
 
 @keyframes brilhoSelo {
@@ -455,6 +455,7 @@ h1, h2, h3 {
     left: 130%;
   }
 }
+
 .plano-card h3 { font-size: 22px; margin-bottom: 8px; }
 .plano-desc { color: var(--texto-suave); font-size: 14px; margin-bottom: 24px; }
 .plano-preco { margin-bottom: 26px; }
