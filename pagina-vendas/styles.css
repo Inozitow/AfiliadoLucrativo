@@ -328,6 +328,7 @@ h1, h2, h3 {
   color: var(--texto-suave);
   max-width: 560px;
   margin: 0 auto 30px;
+  font-size: 18px;
 }
 
 /* ---------- IDENTIFICACAO ---------- */
