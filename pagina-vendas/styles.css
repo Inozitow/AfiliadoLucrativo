@@ -75,7 +75,7 @@ h1, h2, h3 {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  padding: 120px 0 90px;
+  padding: 80px 0 90px;
   text-align: center;
   overflow: hidden;
 }
