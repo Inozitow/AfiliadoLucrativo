@@ -83,7 +83,7 @@ h1, h2, h3 {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('./assets/hero-bg.png') center center / cover no-repeat;
+  background: url('./assets/hero-bg.webp') center center / cover no-repeat;
   opacity: 0.35;
   z-index: 0;
 }
