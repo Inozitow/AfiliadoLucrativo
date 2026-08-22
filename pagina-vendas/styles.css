@@ -775,7 +775,7 @@ details p {
   gap: 24px;
   border-radius: 15px;
   
-  max-width: 900px;
+  max-width: 768px;
   margin: 40px auto 0;
 
 }
@@ -796,7 +796,6 @@ details p {
   grid-column: 1 / -1;
   justify-self: center;
   width: calc(50% - 12px);
-}
 }
 
 
@@ -829,4 +828,17 @@ details p {
     justify-self: stretch;
   }
 
+}
+
+@media (max-width: 768px) {
+  .provas-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .provas-grid > img {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
