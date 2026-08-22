@@ -792,8 +792,9 @@ details p {
 
 .provas-grid img:last-child {
   grid-column: 1 / -1;
-  justify-self: center;
   width: calc(50% - 12px);
+  margin-left: auto;
+  margin-right: auto;
 }
 }
 
