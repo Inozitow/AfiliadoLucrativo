@@ -789,6 +789,7 @@ details p {
   border: 1px solid rgba(201, 162, 75, 0.25);
 
   object-fit: contain;
+}
 
 .prova-whatsapp {
   grid-column: 1 / -1;
