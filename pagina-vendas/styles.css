@@ -191,6 +191,13 @@ html {
   margin: 0 auto 50px;
 }
 
+.section-subtitle2 {
+  text-align: center;
+  color: var(--texto-suave);
+  max-width: 560px;
+  margin: 0 auto 50px;
+}
+
 /* ---------- DEMO ---------- */
 .demo { background: var(--preto-2); }
 .demo-image {
