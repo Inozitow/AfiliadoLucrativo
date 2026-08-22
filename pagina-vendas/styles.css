@@ -194,7 +194,7 @@ html {
 .section-subtitle2 {
   text-align: center;
   color: var(--texto-suave);
-  max-width: 480px;
+  max-width: 400px;
   margin: 0 auto 25px;
 }
 
