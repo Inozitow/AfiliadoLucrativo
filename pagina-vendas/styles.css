@@ -761,3 +761,52 @@ details p {
   transform: translateX(40px);
   opacity: 0;
 }
+
+/* ---------- PROVAS VISUAIS ---------- */
+
+.provas-visuais {
+  padding: 80px 0;
+  background: #0a0a0a;
+}
+
+.provas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  border-radius: 15px;
+
+  margin-top: 40px;
+
+  
+}
+
+.provas-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(201, 162, 75, 0.25);
+
+  object-fit: contain;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+  .provas-visuais {
+    padding: 60px 0;
+  }
+
+  .provas-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    border-radius: 15px;
+
+    margin-top: 30px;
+  }
+
+}
