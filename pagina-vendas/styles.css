@@ -208,7 +208,7 @@ html {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  margin: 25px auto 0;
+  margin: 35px auto 0;
 }
 
 .carousel-viewport {
@@ -620,6 +620,11 @@ details p {
   .demo .section-subtitle {
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .demo .section-subtitle2 {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
 
