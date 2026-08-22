@@ -809,4 +809,15 @@ details p {
     margin-top: 30px;
   }
 
+  .provas-grid img:last-child {
+  grid-column: auto;
+  width: 100%;
+}
+
+}
+
+.provas-grid img:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 12px);
 }
