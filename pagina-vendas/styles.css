@@ -501,6 +501,7 @@ html {
   max-width: 700px;
   margin: 0 auto 6px;
   color: var(--verde);
+  font-weight: bold;
 }
 
   .Promocional2 {
@@ -508,6 +509,7 @@ html {
   max-width: 700px;
   margin: 0 auto 6px;
   color: var(--verde);
+  font-weight: bold;
 }
 
 /* ---------- FAQ ---------- */
