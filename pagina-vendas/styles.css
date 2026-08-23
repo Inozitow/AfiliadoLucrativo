@@ -495,6 +495,13 @@ html {
 }
 .plano-lista li { padding: 6px 0; }
 
+.Promocional {
+  font-size: 15px;
+  max-width: 700px;
+  margin: 0 auto 6px;
+  color: var(--dourado-claro);
+}
+
 /* ---------- FAQ ---------- */
 .faq-list {
   max-width: 700px;
